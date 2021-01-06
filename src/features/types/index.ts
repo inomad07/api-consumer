@@ -19,5 +19,5 @@ export type actionType = {
 }
 
 export type stateType = {
-    rootReducer: []
+    episodeReducer: any
 }

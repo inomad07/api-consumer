@@ -1,21 +1,20 @@
 import types from '../constants'
-import { episodeType as Episode } from '../../types';
 // Helper functions to dispatch actions, optionally with payloads
 
-const loadCartoons = () => {
+const loadEpisodes = () => {
     return {
         type: types.LOAD
     }
 };
 
-const loadCartoonsSuccess = (data: []) => {
+const loadEpisodesSuccess = (data: any) => {
     return {
         type: types.LOAD_SUCCESS,
         payload: data
     }
 };
 
-const loadCartoonsFailure = (data: any) => {
+const loadEpisodesFailure = (data: any) => {
     return {
         type: types.LOAD_FAILURE,
         payload: data
@@ -24,7 +23,7 @@ const loadCartoonsFailure = (data: any) => {
 
 
 export {
-    loadCartoons,
-    loadCartoonsSuccess,
-    loadCartoonsFailure,
+    loadEpisodes,
+    loadEpisodesSuccess,
+    loadEpisodesFailure,
 };

@@ -4,11 +4,11 @@ import config from '../../common/config/api.config'
 const api = `${config.protocol}://${config.host}/api/episode`
 
 
-function getAll() {
+function getAllEpisodes() {
     return axios.get(`${api}`)
 }
 
 
-export default {
-    getAll,
+export {
+    getAllEpisodes,
 }

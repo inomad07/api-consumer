@@ -1,10 +1,10 @@
 import { all } from 'redux-saga/effects'
 
-import { watcherLoadCartoons } from './load.saga'
+import { watcherLoadEpisodes } from './load.saga'
 
 export default function* rootSaga () {
     yield all([
-        watcherLoadCartoons(),
+        watcherLoadEpisodes(),
         // add other watchers to the array
     ]);
 }
