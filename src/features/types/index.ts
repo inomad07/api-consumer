@@ -4,7 +4,7 @@ export type appProps = {
 }
 
 export type episodeType = {
-    id: string,
+    id: number,
     name: string,
     air_date: string,
     episode: string,

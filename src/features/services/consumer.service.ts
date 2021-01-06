@@ -8,7 +8,12 @@ function getAllEpisodes() {
     return axios.get(`${api}`)
 }
 
+function getEpisode(id: number) {
+    return axios.get(`${api}/${id}`)
+}
+
 
 export {
     getAllEpisodes,
+    getEpisode
 }
