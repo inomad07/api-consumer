@@ -1,5 +1,0 @@
-{
-  "testRegex": "((\\.|/*.)(spec))\\.js?$",
-  "verbose": true,
-  "globalSetup": "./configs/timezone.js"
-}

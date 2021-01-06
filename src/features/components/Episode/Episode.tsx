@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { getEpisode } from '../../services/consumer.service';
+import { getEpisode } from '../../services/consumer.service'
 
 
 export default function Episode ({ id }: {id: number}) {

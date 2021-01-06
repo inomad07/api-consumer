@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import Spinner from '../Spinner'
+import Spinner from '../../../common/components/Spinner'
 import { loadEpisodes } from '../../redux/actions'
 import { episodeType as Type, stateType as State } from '../../types'
 
 
 export default function EpisodeList (props: any) {
-    const { data, isFetching } = useSelector((state: State) => state.episodeReducer)
+    const { data } = useSelector((state: State) => state.episodeReducer)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -22,15 +22,15 @@ export default function EpisodeList (props: any) {
 
     if(!data) {
         return (
-            <div className="data-info">
-                Episodes not found
-            </div>
+            <Spinner />
         )
     }
 
-    if(isFetching) {
+    if (!data.length) {
         return (
-            <Spinner />
+            <div className="data-info">
+                Episodes not found
+            </div>
         )
     }
 
