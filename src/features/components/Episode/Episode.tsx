@@ -1,34 +1,39 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import { getEpisode } from '../../services/consumer.service'
+import { useDispatch, useSelector } from 'react-redux'
 
+import Spinner from "../../../common/components/Spinner/Spinner";
+import { openEpisode } from "../../redux/actions";
+import { stateType as State } from '../../types'
 
 export default function Episode() {
-    const [episode, setEpisode] = useState({
-        id: null,
-        name: '',
-        air_date: '',
-        episode: '',
-        characters: [],
-        url: '',
-        created: ''
-    });
-
+    const { episode, isFetching } = useSelector((state: State) => state.episodeReducer)
+    const dispatch = useDispatch()
     const {id} = useParams();
 
     useEffect( () => {
-        getEpisode(id)
-            .then(res => setEpisode(res.data))
+        dispatch(openEpisode(id))
     },[]);
 
-    if (!episode) {
-        return null
+    if(isFetching) {
+        return (
+            <Spinner />
+        )
+    }
+
+    if (!episode?.id) {
+        return (
+            <div className="episode-not-found">
+                Episode not found
+            </div>
+        )
     }
 
     return (
         <div className="list-item">
-            <h3 className="">{episode.name}</h3>
-            <label>Air date: {episode.air_date}</label>
+            <h3>{episode.episode}</h3>
+            <p className="">Name: {episode.name}</p>
+            <p>Air date: {episode.air_date}</p>
             <p>Episode: {episode.episode}</p>
             <p>Characters: {episode.characters[0]}
                 <br/>
