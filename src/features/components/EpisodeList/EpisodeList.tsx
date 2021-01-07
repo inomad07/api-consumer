@@ -7,7 +7,7 @@ import { episodeType as Type, stateType as State } from '../../types'
 
 
 export default function EpisodeList (props: any) {
-    const { data } = useSelector((state: State) => state.episodeReducer)
+    const { data, isFetching } = useSelector((state: State) => state.episodeReducer)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -20,13 +20,13 @@ export default function EpisodeList (props: any) {
         props.history.push(newPath)
     };
 
-    if(!data) {
+    if(isFetching) {
         return (
             <Spinner />
         )
     }
 
-    if (!data.length) {
+    if (!data?.length) {
         return (
             <div className="data-info">
                 Episodes not found

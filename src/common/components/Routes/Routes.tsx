@@ -10,11 +10,11 @@ export default function Routes() {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={EpisodeList}/>
-                <Route path="/:id" render={({ match }) => {
-                    const { id } = match.params;
-                    return <Episode id={id} />
-                }} />
+                <Route exact path="/" >
+                    <EpisodeList/>
+                    <Route path="/:id" component={Episode}/>
+                </Route>
+
                 <Route component={NotFound}/>
             </Switch>
         </Router>
