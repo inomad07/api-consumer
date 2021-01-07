@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 
 import Spinner from '../../../common/components/Spinner'
 import { loadEpisodes } from '../../redux/actions'
 import { episodeType as Type, stateType as State } from '../../types'
 
 
-export default function EpisodeList (props: any) {
+export default function EpisodeList () {
     const { data, isFetching } = useSelector((state: State) => state.episodeReducer)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     useEffect(() => {
         dispatch(loadEpisodes())
@@ -16,8 +18,8 @@ export default function EpisodeList (props: any) {
 
     const openEpisode = (id: number) => (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault()
-        const newPath = `/${id}`
-        props.history.push(newPath)
+        const newPath = `/episodes/${id}`
+        history.push(newPath)
     };
 
     if(isFetching) {

@@ -10,11 +10,8 @@ export default function Routes() {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" >
-                    <EpisodeList/>
-                    <Route path="/:id" component={Episode}/>
-                </Route>
-
+                <Route exact path="/" component={EpisodeList}/>
+                <Route path="/episodes/:id" component={Episode}/>
                 <Route component={NotFound}/>
             </Switch>
         </Router>
