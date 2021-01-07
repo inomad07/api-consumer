@@ -8,7 +8,7 @@ const loadEpisodes = () => {
     }
 };
 
-const loadEpisodesSuccess = (data: any) => {
+const loadEpisodesSuccess = (data: episodeType[]) => {
     return {
         type: types.LOAD_SUCCESS,
         payload: data

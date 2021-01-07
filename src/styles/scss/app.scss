@@ -51,6 +51,10 @@ body {
   padding: 10px;
 }
 
+.element {
+  padding-right: 15px;
+}
+
 .data-info {
   margin-top: 10px;
   display: flex;
@@ -63,6 +67,8 @@ body {
   text-align: center;
   margin: 30px 0
 }
+
+
 
 
 //Spinner
@@ -142,6 +148,4 @@ body {
   -webkit-transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
   transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
 }
-
-
 

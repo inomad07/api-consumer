@@ -39,9 +39,9 @@ export default function EpisodeList () {
     return (
         <div className='list'>
             { data.map( (item: Type) => <div className='item' key={item.id} onClick={openEpisode(item.id)}>
-                <span>Id: {item.id}</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                <span>Episode: {item.episode}</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                <span>{item.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span className="element">Id: {item.id}</span>
+                <span className="element">Episode: {item.episode}</span>
+                <span className="element">{item.name}</span>
             </div>)}
         </div>
     )
