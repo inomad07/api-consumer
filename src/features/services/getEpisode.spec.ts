@@ -1,7 +1,7 @@
 import mockAxios from '../../__mocks__/axios'
 
 import { getEpisode } from "./consumer.service";
-import { episodeType } from "../types/index";
+import { episodeType } from "../types";
 
 
 let episode: episodeType = {
@@ -35,7 +35,7 @@ let episode: episodeType = {
 }
 
 
-it("fetches data from consumer-service", async () => {
+it("fetches single episode", async () => {
     // setup
     mockAxios.get.mockImplementationOnce(() =>
         Promise.resolve({
