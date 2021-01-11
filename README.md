@@ -22,10 +22,6 @@ API Consumer for https://rickandmortyapi.com/
 To install this boilerplate you need to run following commands
 
 ```bash
-# Clone the repository on your hard drive
-git clone https://github.com/codesbiome/react-webpack-typescript-2020
-cd react-webpack-typescript-2020
-
 # Install dependencies using "Yarn" package manager
 # NPM can also be used to install usign 'npm install' command
 yarn install
